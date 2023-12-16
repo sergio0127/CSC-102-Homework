@@ -1,0 +1,81 @@
+<!-- strings.html by [Sergio Yoni Cano] -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Palindrome Checker</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #3498db; /* Cool blue color */
+      color: white; /* Text color on the blue background */
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #fff; /* White text for the heading */
+    }
+
+    input {
+      padding: 8px;
+      margin: 10px;
+    }
+
+    button {
+      padding: 10px;
+      margin: 10px;
+      background-color: #2ecc71; /* Green button color */
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 10px; /* Add rounded corners to the image */
+      margin-top: 20px;
+    }
+    /* Add more styles as needed */
+  </style>
+</head>
+<body>
+  <h1>Palindrome Checker</h1>
+
+  <!-- Cat image -->
+  <img src="lucky cat.jpg" alt="Cat Image">
+
+  <script>
+    // Function to check if a string is a palindrome
+    function isPalindrome(str) {
+      const cleanedStr = str.replace(/\s/g, '').toLowerCase();
+      const reversedStr = cleanedStr.split('').reverse().join('');
+      return cleanedStr === reversedStr;
+    }
+
+    // Main loop
+    let continueChecking = true;
+    while (continueChecking) {
+      // Prompt user to enter a string
+      const userInput = prompt("Enter a string to check if it's a palindrome:");
+
+      // Check if the entered string is a palindrome
+      if (isPalindrome(userInput)) {
+        alert("It's a palindrome!");
+      } else {
+        alert("It's not a palindrome.");
+      }
+
+      // Ask the user if they want to enter another word
+      const continueInput = confirm("Do you want to enter another word?");
+      if (!continueInput) {
+        continueChecking = false;
+      }
+    }
+  </script>
+</body>
+</html>
+
+
